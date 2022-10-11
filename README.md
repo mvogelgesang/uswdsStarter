@@ -1,13 +1,31 @@
 # USWDS Starter for SF Projects
 
-This is  a demonstration repo to show the folder structure needed to compile 
+This is a demonstration repo to show the folder structure needed to compile
 
 ## Prerequisites
 
 - Node
 - SFDX CLI
 
-## 
+## Instructions
+
+Compile resources into assets/uswds/ directory.
+
+`npx gulp compile`
+
+## Creating Zip File for StaticResource
+
+```sh
+zip -r uswds_3_x.zip assets/uswds/css/*.css* scss/ assets/uswds/fonts/*/*.ttf assets/uswds/fonts/*/*.woff assets/uswds/img/ assets/uswds/js/*.min.js*
+```
+
+Upload resulting .zip into Salesforce Static Resources, overwriting previous versions.
+
+| Field         | Pattern                                                | Example                                                                         |
+| ------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------- |
+| Name          | {filename without .zip}                                | uswds_3_x                                                                       |
+| Description   | uswds {full version number}<br>{link to USWDS version} | uswds v3.1.0<br>CSS Files<br>https://github.com/uswds/uswds/releases/tag/v3.1.0 |
+| Cache Control | n/a                                                    | Public                                                                          |
 
 # Salesforce DX Project: Next Steps
 
